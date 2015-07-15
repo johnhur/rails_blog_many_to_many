@@ -1,0 +1,12 @@
+<h1>Posts#index</h1>
+<p><%= link_to "Create a New Post", new_post_path%></p>
+
+Posts: 
+<ul>
+<% @posts.each do |post| %>
+<li><%= link_to "#{post.title}", post_path(post)%> 
+by: <%= post.author %> 
+<%= link_to "Remove", post_path(post), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+</li>
+<% end %>
+</ul>
